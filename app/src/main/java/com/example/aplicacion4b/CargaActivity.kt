@@ -3,25 +3,31 @@ package com.example.aplicacion4b
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
-import java.util.logging.Handler
+import androidx.core.content.ContextCompat
 
 
 class CargaActivity : ComponentActivity() {
 
-    private val TIEMPO_CARGA = 3000 // Tiempo de carga en milisegundos (3 segundos)
+    private val TIEMPO_CARGA = 2000
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_carga)
+        window.statusBarColor = ContextCompat.getColor(this, R.color.verde)
 
-        // Usamos un Handler para retrasar la transición a MainActivity
+        val sharedPreferences = getSharedPreferences("PreferenciasUsuario", MODE_PRIVATE)
+        val isUserDataSaved = sharedPreferences.getBoolean("guardado", false)
+
+        val nextActivity = if (isUserDataSaved) {
+            MainActivity::class.java
+        } else {
+            DatosUsuarioActivity::class.java
+        }
+
         android.os.Handler().postDelayed({
-            // Iniciar la MainActivity
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this,nextActivity)
             startActivity(intent)
-            // Cerrar la pantalla de carga
-            finish() // Para que no se pueda regresar a la pantalla de carga
+            finish()
         }, TIEMPO_CARGA.toLong())
     }
-
 }

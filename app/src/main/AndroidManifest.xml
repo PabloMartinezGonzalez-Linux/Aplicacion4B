@@ -6,28 +6,29 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/vue_icon2"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/vue_icon2"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Aplicacion4B"
+        android:theme="@style/AppTheme"
         tools:targetApi="31">
-
+        <activity
+            android:name=".DatosUsuarioActivity"
+            android:exported="false" />
         <activity
             android:name=".CargaActivity"
             android:exported="true"
-            android:label="@string/title_activity_pantalla_carga"
+            android:label="App"
             android:theme="@style/Theme.Aplicacion4B">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".MainActivity"
             android:exported="true" />
-
     </application>
 
 </manifest>
