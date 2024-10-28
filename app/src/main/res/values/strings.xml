@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Aplicacion4B</string>
+    <string name="title_activity_configuracion">ConfiguracionActivity</string>
+    <string name="title_activity_pantalla_carga">PantallaCarga</string>
+</resources>
