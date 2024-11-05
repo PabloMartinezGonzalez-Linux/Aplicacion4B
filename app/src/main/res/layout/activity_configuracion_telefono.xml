@@ -40,12 +40,12 @@
 
     <ImageView
         android:id="@+id/btt_llamar"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
         app:layout_constraintVertical_bias="0.3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/numeroTelefono"
-        app:srcCompat="@android:drawable/stat_sys_phone_call" />
+        android:background="@mipmap/phone_250" />
 </androidx.constraintlayout.widget.ConstraintLayout>
