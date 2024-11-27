@@ -83,21 +83,21 @@
             android:id="@+id/radio_opcion1"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
-            android:text="Hombre" />
+            android:text="Apruebo el tema 2" />
 
         <RadioButton
             android:id="@+id/radio_opcion2"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
-            android:text="Mujer" />
+            android:text="Suspendo el tema 2" />
 
     </RadioGroup>
 
     <CheckBox
-        android:id="@+id/checkbox_opcion1"
+        android:id="@+id/checkbox"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:text="Estudiante"
+        android:text="Resultado de la suma mayor a 8"
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -115,7 +115,7 @@
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkbox_opcion1"
+        app:layout_constraintTop_toBottomOf="@+id/checkbox"
         android:textColor="@color/azulOscuro"/>
 
 

@@ -1,8 +1,11 @@
 package com.example.aplicacion4b
 
+import android.content.SharedPreferences
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.aplicacion4b.databinding.ActivityDadosBinding
 import java.util.concurrent.Executors
@@ -17,6 +20,9 @@ class DadosActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityDadosBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        cambiarFondo()
+
         inicializarEventos()
     }
 
@@ -82,5 +88,36 @@ class DadosActivity : AppCompatActivity() {
 
     private fun mostrarResultado() {
         binding.txtResultado.text = sumaTotal.toString()
+
+        Log.d("SumaTotal", "Suma total calculada: $sumaTotal")
+
+        val sharedPreferences: SharedPreferences = getSharedPreferences("PreferenciasUsuario", MODE_PRIVATE)
+        val isCheckBoxChecked = sharedPreferences.getBoolean("opcion_check", false)
+
+        Log.d("CheckBoxEstado", "CheckBox leído desde SharedPreferences: $isCheckBoxChecked")
+
+        if (isCheckBoxChecked && sumaTotal > 8) {
+            Log.d("ToastVerificacion", "Toast: Suma mayor que 8 y CheckBox marcado.")
+            runOnUiThread {
+                Toast.makeText(this, "Has acertado!!, La suma es mayor a 8", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+
+
+    private fun cambiarFondo() {
+        val sharedPreferences: SharedPreferences = getSharedPreferences("PreferenciasUsuario", MODE_PRIVATE)
+        val colorSeleccionado = sharedPreferences.getString("color_fondo", "verdeSuave")
+
+        val rootLayout: View = binding.root
+
+        when (colorSeleccionado) {
+            "verdeSuave" -> rootLayout.setBackgroundColor(resources.getColor(R.color.verdeSuave))
+            "azulOscuro" -> rootLayout.setBackgroundColor(resources.getColor(R.color.azulOscuro))
+            "verdeOscuro" -> rootLayout.setBackgroundColor(resources.getColor(R.color.verdeOscuro))
+            else -> rootLayout.setBackgroundColor(resources.getColor(R.color.azulVerdoso))
+        }
     }
 }
+
