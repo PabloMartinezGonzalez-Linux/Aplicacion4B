@@ -6,4 +6,11 @@
     <color name="negro">#000000</color>
     <color name="azulOscuro">#344859</color>
     <color name="verdeOscuro">#397362</color>
+    <color name="verdeSuave">#8AC1A7</color>
+    <color name="azulVerdoso">#5A928B</color>
+    <color name="grisClaro">#E8ECEC</color>
+    <color name="verdeLima">#6FD0A3</color>
+    <color name="grisOscuro">#2E3D47</color>
+    <color name="menta">#7FC8AF</color>
+
 </resources>

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -17,7 +16,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.12"
+        app:layout_constraintVertical_bias="0.08"
         app:srcCompat="@drawable/vue_icon" />
 
     <TextView
@@ -32,7 +31,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logoMain"
-        app:layout_constraintVertical_bias="0.01" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/nombreSaludo"
@@ -48,72 +47,124 @@
         app:layout_constraintTop_toBottomOf="@+id/bienvenido"
         app:layout_constraintVertical_bias="0" />
 
-    <ImageView
-        android:id="@+id/telefono"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.30"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nombreSaludo"
-        app:layout_constraintVertical_bias="0.15"
-        android:background="@mipmap/phone_250" />
-
-    <ImageView
-        android:id="@+id/alarma"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        app:layout_constraintVertical_bias="0.15"
-        app:layout_constraintHorizontal_bias="0.35"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/telefono"
-        app:layout_constraintTop_toBottomOf="@+id/nombreSaludo"
-        android:background="@mipmap/alarma_250" />
-
-    <ImageView
-        android:id="@+id/mensajes"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        app:layout_constraintVertical_bias="0.2"
-        app:layout_constraintHorizontal_bias="0.3"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/telefono"
-        android:background="@mipmap/mensaje_250" />
-
-    <ImageView
-        android:id="@+id/tiempo"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        app:layout_constraintVertical_bias="0.2"
-        app:layout_constraintHorizontal_bias="0.35"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/mensajes"
-        app:layout_constraintTop_toBottomOf="@+id/alarma"
-        android:background="@mipmap/cloud_250" />
-
-    <Button
-        android:id="@+id/btt_configuracion"
-        android:layout_width="220dp"
-        android:layout_height="wrap_content"
+    <androidx.cardview.widget.CardView
         android:backgroundTint="@color/azulOscuro"
-        android:text="Configuracion"
-        android:textAllCaps="false"
-        android:textColor="#FFFFFF"
-        android:textColorLink="#000000"
-        android:padding="17dp"
-        android:textSize="18dp"
-        android:background="@drawable/button_rounde"
+        android:id="@+id/card_telefono"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        app:cardCornerRadius="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.25"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tiempo"
-        app:layout_constraintVertical_bias="0.39" />
+        app:layout_constraintTop_toBottomOf="@+id/nombreSaludo"
+        app:layout_constraintVertical_bias="0.1">
 
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:background="@mipmap/phone_250" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:backgroundTint="@color/azulOscuro"
+        android:id="@+id/card_alarma"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.75"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nombreSaludo"
+        app:layout_constraintVertical_bias="0.1">
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:src="@mipmap/alarma_250" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:backgroundTint="@color/azulOscuro"
+        android:id="@+id/card_cloud"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/card_telefono"
+        app:layout_constraintVertical_bias="0.09">
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:src="@mipmap/cloud_250" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:backgroundTint="@color/azulOscuro"
+        android:id="@+id/card_mensaje"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.75"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/card_alarma"
+        app:layout_constraintVertical_bias="0.09">
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:src="@mipmap/mensaje_250" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:backgroundTint="@color/azulOscuro"
+        android:id="@+id/card_dados"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/card_cloud"
+        app:layout_constraintVertical_bias="0.2">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:src="@drawable/icons_play" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:backgroundTint="@color/azulOscuro"
+        android:id="@+id/card_chistes"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.75"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/card_mensaje"
+        app:layout_constraintVertical_bias="0.2">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:src="@drawable/icon_coro" />
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

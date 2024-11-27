@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/verdeSuave">
+
+    <ImageButton
+        android:id="@+id/tiradaDados"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.2"
+        android:background="@drawable/dados" />
+
+    <ImageView
+        android:id="@+id/dado1"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tiradaDados"
+        app:srcCompat="@drawable/dado_1" />
+
+    <ImageView
+        android:id="@+id/dado2"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="1dp"
+        app:layout_constraintEnd_toEndOf="@+id/dado1"
+        app:layout_constraintTop_toBottomOf="@+id/dado1"
+        app:srcCompat="@drawable/dado_2" />
+
+    <ImageView
+        android:id="@+id/dado3"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="21dp"
+        app:layout_constraintStart_toStartOf="@+id/dado2"
+        app:layout_constraintTop_toBottomOf="@+id/dado2"
+        app:srcCompat="@drawable/dado_3" />
+
+    <TextView
+        android:id="@+id/txt_resultado"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text="0"
+        android:textColor="@color/blanco"
+        android:textSize="60sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dado3"
+        android:gravity="center"
+        app:layout_constraintVertical_bias="0.2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

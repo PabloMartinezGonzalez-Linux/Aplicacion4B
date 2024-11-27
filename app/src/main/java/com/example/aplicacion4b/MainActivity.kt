@@ -21,25 +21,33 @@ class MainActivity : AppCompatActivity() {
         val sharedPreferences: SharedPreferences = getSharedPreferences("PreferenciasUsuario", MODE_PRIVATE)
         binding.nombreSaludo.text = sharedPreferences.getString("nombre_usuario", "Usuario")
 
-        binding.bttConfiguracion.setOnClickListener {
+        binding.logoMain.setOnClickListener{
             startActivity(Intent(this, DatosUsuarioActivity::class.java))
         }
 
-        binding.telefono.setOnClickListener {
+        binding.cardTelefono.setOnClickListener {
             startActivity(Intent(this, ConfiguracionTelefono::class.java))
         }
 
-        binding.alarma.setOnClickListener {
+        binding.cardAlarma.setOnClickListener {
             val intent = Intent(AlarmClock.ACTION_SHOW_ALARMS)
             startActivity(intent)
         }
 
-        binding.tiempo.setOnClickListener {
+        binding.cardCloud.setOnClickListener {
             val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.aemet.es/es/eltiempo/prediccion/municipios/jaen-id23050"))
             startActivity(intent)
         }
 
-        binding.mensajes.setOnClickListener(){
+        binding.cardChistes.setOnClickListener {
+            startActivity(Intent(this, ChistesActivity::class.java))
+        }
+
+        binding.cardDados.setOnClickListener{
+            startActivity(Intent(this, DadosActivity::class.java))
+        }
+
+        binding.cardMensaje.setOnClickListener(){
             val intent = Intent(Intent.ACTION_MAIN).apply {
                 addCategory(Intent.CATEGORY_APP_MESSAGING)
             }
